@@ -151,6 +151,14 @@ if [ ! -e "$MW_HOME/LocalSettings.php" ]; then
     ln -s "$MW_VOLUME/LocalSettings.php" "$MW_HOME/LocalSettings.php"
 fi
 
+if [ ! -e "$MW_HOME/DockerSettings.php" ]; then
+    ln -s "$MW_VOLUME/DockerSettings.php" "$MW_HOME/DockerSettings.php"
+fi
+
+if [ ! -e "$MW_HOME/CustomSettings.php" ]; then
+    ln -s "$MW_VOLUME/CustomSettings.php" "$MW_HOME/CustomSettings.php"
+fi
+
 ########## Run maintenance scripts ##########
 if [ $MW_AUTOUPDATE == 'true' ]; then
     echo 'Check for the need to run maintenance scripts'
