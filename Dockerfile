@@ -131,15 +131,6 @@ RUN set -x; \
     && cd VisualEditor \
     && git submodule update --init
 
-##### ElasticSearch extensions
-RUN set -x; \
-    cd $MW_HOME/extensions \
-    && git clone --depth 1 -b $MW_VERSION https://gerrit.wikimedia.org/r/mediawiki/extensions/CirrusSearch \
-    && git clone --depth 1 -b $MW_VERSION https://gerrit.wikimedia.org/r/mediawiki/extensions/Elastica \
-    && cd Elastica \
-    && composer install --no-dev \
-    && cd ..
-
 ##### MultimediaViewer extension
 RUN set -x; \
     cd $MW_HOME/extensions \
@@ -159,8 +150,6 @@ RUN set -x; \
 # Increase value for run maintenance script before web service started
 ENV MW_AUTOUPDATE=true \
     MW_MAINTENANCE_UPDATE=3 \
-    MW_MAINTENANCE_CIRRUSSEARCH_UPDATECONFIG=1 \
-    MW_MAINTENANCE_CIRRUSSEARCH_FORCEINDEX=1 \
     MW_MAINTENANCE_ULS_INDEXER=1 \
     MW_SCRIPT_CLDR_REBUILD=1 \
     MW_SITE_NAME=My\ MediaWiki\ Site \

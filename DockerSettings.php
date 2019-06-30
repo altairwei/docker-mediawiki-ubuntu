@@ -227,22 +227,6 @@ if ( $tmpRestDomain && $tmpRestParsoidUrl ) {
     }
 }
 
-########################### Search Type ############################
-switch( getenv( 'MW_SEARCH_TYPE' ) ) {
-    case 'CirrusSearch':
-        # https://www.mediawiki.org/wiki/Extension:CirrusSearch
-        wfLoadExtension( 'Elastica' );
-        require_once "$IP/extensions/CirrusSearch/CirrusSearch.php";
-        $wgCirrusSearchServers =  explode( ',', getenv( 'MW_CIRRUS_SEARCH_SERVERS' ) );
-        if ( $flowNamespaces ) {
-            $wgFlowSearchServers = $wgCirrusSearchServers;
-        }
-        $wgSearchType = 'CirrusSearch';
-        break;
-    default:
-        $wgSearchType = null;
-}
-
 ######################### MultimediaViewer ##########################
 wfLoadExtension('MultimediaViewer');
 
