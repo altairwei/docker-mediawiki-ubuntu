@@ -187,8 +187,6 @@ RUN chmod -v +x /run-apache.sh
 
 COPY DockerSettings.php $MW_HOME/DockerSettings.php
 
-COPY favicon.ico $MW_HOME/favicon.ico
-COPY logo.png $MW_HOME/logo.png
 COPY CustomSettings.php $MW_HOME/CustomSettings.php
 
 CMD ["/run-apache.sh"]

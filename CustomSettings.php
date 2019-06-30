@@ -6,5 +6,3 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 }
 
 ######## Place your settings below ########
-
-$wgMFDefaultSkinClass = 'SkinTimeless';
