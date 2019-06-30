@@ -128,9 +128,9 @@ RUN set -x; \
 ##### VisualEditor extension
 RUN set -x; \
     cd $MW_HOME/extensions \
-    && git clone --depth 1 -b $MW_VERSION https://gerrit.wikimedia.org/r/mediawiki/extensions/VisualEditor
-    #&& cd VisualEditor \
-    #&& git submodule update --init
+    && git clone --depth 1 -b $MW_VERSION https://gerrit.wikimedia.org/r/mediawiki/extensions/VisualEditor \
+    && cd VisualEditor \
+    && git submodule update --init
 
 ##### ElasticSearch extensions
 RUN set -x; \
