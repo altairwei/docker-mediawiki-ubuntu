@@ -39,7 +39,6 @@ RUN set -x; \
 ENV MW_VERSION=REL1_32 \
     MW_HOME=/var/www/html/w \
     MW_VOLUME=/mediawiki \
-    MW_DB_VOLUME=/mysqldb \
     WWW_USER=www-data \
     WWW_GROUP=www-data \
     APACHE_LOG_DIR=/var/log/apache2
@@ -186,7 +185,6 @@ COPY run-apache.sh /run-apache.sh
 RUN chmod -v +x /run-apache.sh
 
 COPY DockerSettings.php $MW_HOME/DockerSettings.php
-
 COPY CustomSettings.php $MW_HOME/CustomSettings.php
 
 CMD ["/run-apache.sh"]
