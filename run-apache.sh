@@ -113,6 +113,7 @@ if [ ! -e "$MW_VOLUME/LocalSettings.php" ]; then
 
     # Append inclusion of DockerSettings.php
     echo "@include('DockerSettings.php');" >> "$MW_VOLUME/LocalSettings.php"
+    sed -i "/wfLoadSkin( 'MinervaNeue' );/d" "$MW_VOLUME/LocalSettings.php"
 fi
 
 if [ ! -e "$MW_HOME/LocalSettings.php" ]; then
